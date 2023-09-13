@@ -14,7 +14,7 @@ const EditUser = () => {
   }, []);
 
   const getUserById = async () => {
-    const response = await axios.get(`https://web-crud-api.vercel.app/${id}`);
+    const response = await axios.get(`https://web-crud-api.vercel.app/users/${id}`);
     setName(response.data.name);
     setEmail(response.data.email);
     setGender(response.data.gender);
@@ -23,7 +23,7 @@ const EditUser = () => {
   const updateUser = async (e) => {
     e.preventDefault();
     try {
-      await axios.patch(`https://web-crud-api.vercel.app/${id}`, {
+      await axios.patch(`https://web-crud-api.vercel.app/users${id}`, {
         name,
         email,
         gender,
