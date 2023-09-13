@@ -12,13 +12,13 @@ const UserList = () => {
   }, []);
 
   const getUsers = async () => {
-    const response = await axios.get("https://web-crud-api.vercel.app/users");
+    const response = await axios.get("http://localhost:5000/users");
     setUser(response.data);
   };
 
   const deleteUser = async (id) => {
     try {
-      await axios.delete(`https://web-crud-api.vercel.app/users/${id}`);
+      await axios.delete(`http://localhost:5000/users/${id}`);
       getUsers();
     } catch (error) {
       console.log(error);
